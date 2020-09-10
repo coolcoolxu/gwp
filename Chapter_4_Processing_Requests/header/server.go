@@ -7,7 +7,9 @@ import (
 
 func headers(w http.ResponseWriter, r *http.Request) {
 	h := r.Header
-	fmt.Fprintln(w, h)
+	h2 := h["Accept"]
+	h3 := h.GET("Accept")
+	fmt.Fprintf(w,"The h2 is %v, the typeof h2 is %T,the type of h is %T",h2,h2,h)
 }
 
 func main() {
