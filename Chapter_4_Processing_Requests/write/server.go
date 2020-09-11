@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"encoding/json"
 	"net/http"
 )
@@ -21,7 +20,8 @@ func writeExample(w http.ResponseWriter, r *http.Request) {
 
 func writeHeaderExample(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(501)
-	fmt.Fprintln(w, "No such service, try next door")
+	// fmt.Fprintln(w, "No such service, try next door")
+	w.Write([]byte("No such service, try next door!!!")) //与上面效果一样，就是需要做一下强制类型转换
 }
 
 func headerExample(w http.ResponseWriter, r *http.Request) {
