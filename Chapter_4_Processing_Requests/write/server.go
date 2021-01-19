@@ -35,8 +35,8 @@ func jsonExample(w http.ResponseWriter, r *http.Request) {
 		User:    "Sau Sheong",
 		Threads: []string{"first", "second", "third"},
 	}
-	json, _ := json.Marshal(post)
-	w.Write(json)
+	jsonreturn, _ := json.Marshal(post)
+	w.Write(jsonreturn)
 }
 
 func main() {
